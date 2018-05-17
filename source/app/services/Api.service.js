@@ -13,7 +13,7 @@ angular
         return Service = {
             // public methods
             /**
-             * @description to get actual article from server side
+             * @description to get actual list from server side
              * @example ApiService.getList().then(...).catch(...);
              * @returns { Promise }
              * @function ApiService.getList
@@ -32,6 +32,20 @@ angular
                         ]} );
                 }, 0.5* 1000);
                 return deferred.promise;
-            }
+            },
+            /**
+             * @description to set actual value
+             * @example ApiService.setValue().then(...).catch(...);
+             * @returns { Promise }
+             * @function ApiService.setValue
+             * @public
+             */
+            setValue: function (value) {
+                var deferred = $q.defer();
+                $timeout(function () {
+                    deferred.resolve( {result: 'ok'} );
+                }, 0.5* 1000);
+                return deferred.promise;
+            },
         };
     });

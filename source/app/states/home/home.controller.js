@@ -44,8 +44,15 @@ angular
 
         vm.getList();
 
-        function setRangeValue (value) {
-
+        function setRangeValue () {
+            ApiService
+                .setValue(vm.rangeSlider.currentValue)
+                .then( function ( result ) {
+                    console.log(result);
+                })
+                .catch( function ( /*error*/ ) {
+                    // NOTE: error doesn't handled because in case of error we predefined data as empty
+                });
         }
 
     });

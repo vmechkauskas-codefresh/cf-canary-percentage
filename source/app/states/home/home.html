@@ -10,7 +10,7 @@
                     </div>
                     -->
                     <div class="panel-body">
-                        <form>
+                        <form ng-submit="$event.event.preventDefault(); vm.setRangeValue()" novalidate>
                             <div class="form-group">
                                 <label for="rageSlider">Current</label>
                                 <rzslider
