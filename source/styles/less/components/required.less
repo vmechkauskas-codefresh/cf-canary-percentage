@@ -1,0 +1,15 @@
+* {
+    /*
+     * implements addition sign for form labels
+     * @example
+     * <label for="firstName" class="required"> First Name </label>
+     */
+    .required {
+        &:after {
+            content: "\f069";
+            color: @red;
+            vertical-align: text-top;
+            font: normal normal normal 8px/1 FontAwesome;
+        }
+    }
+}

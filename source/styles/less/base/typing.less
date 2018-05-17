@@ -1,0 +1,68 @@
+body {
+    color: @base-text;
+    background-color: @white;
+    font-family: @font-family-base;
+    font-size: @font-size-regular;
+    font-weight: @font-weight-base;
+    line-height: @line-height-base;
+}
+
+* {
+
+    h1, .h1,
+    h2, .h2,
+    h3, .h3,
+    h4, .h4,
+    h5, .h5,
+    h6, .h6,
+    h7, .h7,
+    h8, .h8 {
+        font-family: @font-family-montserrat;
+    }
+
+    /*NOTE: use floor() to get integer value*/
+    h1, .h1 {
+        font-size: @font-size-h1 * 1;
+        font-weight: @font-weight-bold;
+        @media ( max-width: @mobile-point ) { font-size: floor( @font-size-h1 * 0.8 ); }
+    }
+
+    h2, .h2 {
+        font-size: @font-size-h2 * 1;
+        font-weight: @font-weight-regular;
+        @media ( max-width: @mobile-point ) { font-size: floor( @font-size-h2 * 0.8 ); }
+    }
+
+    h3, .h3 {
+        font-size: @font-size-h3 * 1;
+        font-weight: @font-weight-book;
+        @media ( max-width: @mobile-point ) { font-size: floor( @font-size-h3 * 0.9 ); }
+    }
+
+    h4, .h4 {
+        font-size: @font-size-h4 * 1;
+        font-weight: @font-weight-book;
+        @media ( max-width: @mobile-point ) { font-size: floor( @font-size-h4 * 0.9 ); }
+    }
+
+    h5, .h5 {
+        font-size:@font-size-h5;
+        font-weight: @font-weight-book;
+    }
+
+    h6, .h6 {
+        font-size: @font-size-h6;
+        font-weight: @font-weight-book;
+    }
+
+    h7, .h7 {
+        font-size: @font-size-h7;
+        font-weight: @font-weight-book;
+    }
+
+    h8, .h8 {
+        font-size: @font-size-h8;
+        font-weight: @font-weight-book;
+    }
+
+}

@@ -1,0 +1,50 @@
+
+'use strict';
+
+angular
+    /**
+     * default bootstraping of angular application
+     * structure dependencies application
+     */
+    .module('cf-cp', [
+        'ui.router',
+        'restangular',
+        'ui.bootstrap',
+        'toastr',
+        'cf-cp.layout',
+        'angularMoment',
+        'ngMap',
+        'ui.mask',
+        'ui.validate',
+        'rzModule'
+    ])
+
+    .config( function ( $urlRouterProvider, $logProvider, $locationProvider, RestangularProvider, config ) {
+        //
+        $locationProvider.html5Mode(true);
+        // OTHERWICE
+        $urlRouterProvider.otherwise('/home');
+        // Do I need to have a log.debug message visible ?
+        $logProvider.debugEnabled(!config.production);
+
+        // Do I need customize a request base url ?
+        // RestangularProvider.setBaseUrl(config.apiPath);
+        // Do I need customize a request headers for application ?
+        // RestangularProvider.setDefaultHeaders({'custom-header': 'best request'});
+
+    })
+
+    .run( function ( $rootScope, $state, $log, config ) {
+        // Do I need to state parameters visible in the html view ?
+        $rootScope.$state = $state;
+        $rootScope.customerTitle = config.customerTitle;
+        // log a configuration of aplication
+        $log.debug('app config\n', config);
+
+        if ( !config.production ) {
+            var log = $log.error.bind($log, 'ui-router => $stateChangeError:\n');
+            $rootScope.$on('$stateChangeError', function (event, toState, toParams, fromState, fromParams, error) {
+                log.apply(null, Array.prototype.slice.call(arguments) );
+            });
+        }
+    });

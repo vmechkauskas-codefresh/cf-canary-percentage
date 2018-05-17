@@ -1,0 +1,16 @@
+{
+  "generator-angular-dft": {
+    "user": "vmechkauskas",
+    "appName": "cf-canary-percentage",
+    "appVersion": "0.0.1",
+    "cssFramework": null,
+    "modules": {
+      "root": "cf-cp"
+    },
+    "instalation": "complete",
+    "preprocessors": {
+      "css": "less",
+      "js": null
+    }
+  }
+}

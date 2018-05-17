@@ -1,0 +1,44 @@
+<div id="homePage">
+    <div class="container-fluid inner-page">
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="panel panel-cf-box">
+                    <!--
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Panel title</h3>
+                    </div>
+                    -->
+                    <div class="panel-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="rageSlider">Current</label>
+                                <rzslider
+                                    id="rageSlider"
+                                    class="cf-range-slider"
+                                    rz-slider-model="vm.rangeSlider.currentValue"
+                                    rz-slider-options="vm.rangeSlider.options"
+                                    on-change="vm.rangeSlider.sliderOnChange"></rzslider>
+                            </div>
+                            <button type="submit" class="btn btn-cf-anim btn-cf-primary no-radius">Set</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="panel panel-cf-box">
+                    <div class="panel-body">
+                        <table class="table table-bordered table-striped table-condensed table-hover">
+                            <tr ng-repeat="item in vm.availableList track by $index">
+                                <td ng-repeat="row in item">
+                                    {{row}}
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </div>
+</div>

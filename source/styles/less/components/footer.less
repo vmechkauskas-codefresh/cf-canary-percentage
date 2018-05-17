@@ -1,0 +1,26 @@
+#footer {
+    background: @footer-background;
+    padding: 5px 0;
+
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 86px;
+    /**
+     * local variables
+     */
+    @footer-background:                @white;
+    @footer-content-background:        tarsnparent;
+    @footer-text-color:                @muted-text;
+
+    .footer-content-holder {
+        background: @footer-content-background;
+        border-radius: 10px;
+        padding: 20px 40px;
+        .footer-text-grey {
+            color: @footer-text-color;
+            font-size: 95%;
+        }
+    }
+}

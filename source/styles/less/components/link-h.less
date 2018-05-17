@@ -1,0 +1,64 @@
+* {
+    /**
+     *
+     * declare local variables for links based on global variables
+     */
+    @link-h-color: @link-color;
+    @hover-color: @link-hover-color;
+    @bronze-link-color: @bronze;
+    @visited-color: @yellow;
+
+    /*
+     * Example of using "link-h"
+     *
+     * template example
+     * <a href="" class="link-h"> Link </a>
+     */
+    .link-h {
+        color: @link-h-color;
+        &:hover {
+            text-decoration: none;
+            color: @hover-color;
+        }
+        /**
+         *
+         * the same value for pseudoclass "focus" and "active"
+         */
+        &:focus, &:active, &.active {
+            text-decoration: none;
+            outline: none;
+            color: @bronze-link-color;
+        }
+        &:visited {
+            color: @visited-color;
+        }
+        /**
+         * decorator for light "link-h"
+         *
+         * template example
+         * <a href="" class="link-h link-light"> Link </a>
+         */
+        &.link-light {
+            color: lighten(@link-h-color, 20%);
+            &:hover {
+                color: lighten(@hover-color, 20%);
+            }
+            /**
+             *
+             * the same value for pseudoclass "focus" anf "active"
+             */
+            &:focus, &:active, &.active {
+                color: lighten(@bronze-link-color, 20%);
+            }
+            &:visited {
+                color: lighten(@visited-color, 20%);
+            }
+        }
+        /**
+         * PLACE-FOR-DECORATOR-NAME decorator for "link-h"
+         *
+         * template example
+         * <a href="" class="link-h PLACE-FOR-DECORATOR-NAME"> Link </a>
+         */
+    }
+}

@@ -1,0 +1,55 @@
+* {
+    @offset-point: 6px;
+
+    .create-offsets ( @name, @offset ) {
+
+        .indent-@{name} {
+            padding: @offset;
+        }
+
+        .indent-top-@{name} {
+            padding-top: @offset;
+        }
+
+        .indent-bottom-@{name} {
+            padding-bottom: @offset;
+        }
+
+        .offset-@{name} {
+            margin: @offset;
+        }
+
+        .offset-top-@{name} {
+            margin-top: @offset;
+        }
+
+        .offset-bottom-@{name} {
+            margin-bottom: @offset;
+        }
+
+        .offset-left-@{name} {
+            margin-left: @offset;
+        }
+
+        .offset-right-@{name} {
+            margin-right: @offset;
+        }
+    }
+    // common offsets for all pages
+    // margin / padding based
+    .create-offsets(0, @offset-point*0);
+    .create-offsets(1, @offset-point*1);
+    .create-offsets(2, @offset-point*2);
+    .create-offsets(3, @offset-point*3);
+    .create-offsets(4, @offset-point*4);
+    .create-offsets(5, @offset-point*5);
+    .create-offsets(6, @offset-point*6);
+    .create-offsets(7, @offset-point*7);
+    .create-offsets(8, @offset-point*8);
+    .create-offsets(10, @offset-point*10);
+    .create-offsets(16, @offset-point*16);
+    .create-offsets(20, @offset-point*20);
+    .create-offsets(23, @offset-point*23);
+    // HACK for bootstrap gutter width
+    .create-offsets(neg, -15px);
+}

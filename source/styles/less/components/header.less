@@ -1,0 +1,101 @@
+.navbar-codefresh {
+    // Navbar colors
+    @bd-topaz-navbar-g1: #0f9c8d;
+    @bd-topaz-navbar-g2: #11b5a4;
+    @bd-topaz-navbar-g3: #4ebbd3;
+
+    margin: 0;
+    min-height: @base-header-height;
+    padding: .5rem 1rem;
+    //background-color: $bd-purple;
+    background: @bd-topaz-navbar-g1; /* Old browsers */
+    background: linear-gradient(to right, @bd-topaz-navbar-g1 15.57%, @bd-topaz-navbar-g2 83.9%);
+    box-shadow: none; //0 .5rem 1rem rgba(0, 0, 0, .05), inset 0 -1px 0 rgba(0, 0, 0, .1);
+    border: none;
+
+    .navbar-brand {//bootstrap template class
+        padding: 5px 15px;
+    }
+
+    .navbar-toggle {//bootstrap template class
+        border-color: @black-amber-dark;
+        background-color: @khaki;
+        &:hover,
+        &:focus {
+            background-color: @bronze;
+        }
+        .icon-bar {
+            background-color: @black-amber-dark;
+        }
+    }
+
+    .navbar-nav {//bootstrap template class
+        > li > a {
+
+            position: relative;
+            padding-right: 1rem;
+            padding-left: 1rem;
+            font-size: 14px;
+            font-family: @font-family-montserrat;
+            color: @white;
+            font-weight: @font-weight-bold;
+            background-color: transparent;
+            transition: background-color .1s linear, color .1s linear;
+
+            &::after {
+                position: absolute;
+                right: 0;
+                bottom: -.5rem;
+                left: 0;
+                height: 0;
+                content: "";
+                background-color: transparent;
+                transition: background-color .1s linear, height .1s linear;
+            }
+
+            &:hover,
+            &:focus {
+                color: @white;
+                background-color: transparent;
+                &::after {
+                    height: 3px;
+                    content: "";
+                    background-color: @white;
+                }
+            }
+        }
+
+        > .active > a {
+            &,
+            &:hover,
+            &:focus {
+                color: @white;
+                background-color: transparent;
+            }
+        }
+
+        > .disabled > a {
+            &,
+            &:hover,
+            &:focus {
+                color: @white;
+                background-color: transparent;
+            }
+        }
+    }
+
+    .navbar-right {//bootstrap template class
+        @media (min-width: 768px) {
+            margin-right: 0; // for correct navigation's buttons align
+        }
+    }
+}
+
+/**
+*
+* find top indent for main section to avoid overlay by header
+*
+*/
+#header + #main {
+    padding-top: @base-header-height
+}
