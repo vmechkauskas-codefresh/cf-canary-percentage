@@ -1,4 +1,4 @@
-# README of almentor client #
+# README #
 
 #### We assume you have pre-installed node.js with npm, Gulp, Bower.
 
