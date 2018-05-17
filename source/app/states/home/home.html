@@ -27,10 +27,14 @@
 
                 <div class="panel panel-cf-box">
                     <div class="panel-body">
+                        <button type="button" class="btn btn-cf-anim btn-cf-primary no-radius" ng-click="vm.getList()">Reload</button>
                         <table class="table table-bordered table-striped table-condensed table-hover">
                             <tr ng-repeat="item in vm.availableList track by $index">
-                                <td ng-repeat="row in item">
-                                    {{row}}
+                                <td ng-repeat="(k, v) in item">
+                                    <span ng-if="k == 'date'">{{v | date: "MM/dd/yyyy 'at' h:mma"}}</span>
+                                    <span ng-if="k == 'target'">{{v}}</span>
+                                    <span ng-if="k == 'status'">{{v}}</span>
+                                    <span ng-if="k == 'comments'">{{v}}</span>
                                 </td>
                             </tr>
                         </table>

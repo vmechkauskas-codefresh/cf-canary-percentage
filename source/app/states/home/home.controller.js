@@ -37,6 +37,13 @@ angular
                         $log.info(result);
                     })
                     .catch( function ( /*error*/ ) {
+                        // TODO: need to remove - it just dummy data
+                        vm.availableList.push({
+                            date: '2013-05-26T05:00:00.000Z',
+                            target: 'some target',
+                            status: 'active',
+                            comments: 'some comments text'
+                        });
                         // NOTE: error doesn't handled because in case of error we predefined data as empty
                     });
             },
@@ -47,7 +54,7 @@ angular
 
         function setRangeValue () {
             ApiService
-                .setValue(vm.rangeSlider.currentValue)
+                .setValue({percentage: vm.rangeSlider.currentValue})
                 .then( function ( result ) {
                     toastr.success('Current value successfully updated');
                     $log.info(result);

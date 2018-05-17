@@ -34,6 +34,18 @@ angular
 
     })
 
+    .config( function ( RestangularProvider, config ) {
+
+        // set api path by environment
+        RestangularProvider.setBaseUrl(config.serviceUrl+config.apiPath);
+        // set custom header to all request
+        // RestangularProvider.setDefaultHeaders({ 'Authorization': 'Basic dXNlcjpRV0VSVFk=' });
+        RestangularProvider.setResponseExtractor(function ( response ) {
+            is.object( response )&&(response.self = angular.copy(response));
+            return response;
+        });
+    })
+
     .run( function ( $rootScope, $state, $log, config ) {
         // Do I need to state parameters visible in the html view ?
         $rootScope.$state = $state;

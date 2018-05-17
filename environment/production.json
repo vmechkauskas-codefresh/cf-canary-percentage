@@ -1,5 +1,6 @@
 {
     "baseUrl": "/",
     "production": true,
+    "serviceUrl": "/",
     "apiPath": "api/2"
 }
