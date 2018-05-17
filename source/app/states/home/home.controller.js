@@ -5,7 +5,7 @@ angular
 
     .module('layout.home')
 
-    .controller('homeController', function ( $scope, ApiService ) {
+    .controller('homeController', function ( $scope, $log, toastr, ApiService ) {
 
         var vm = $scope.vm = {
             availableList: [],
@@ -22,7 +22,7 @@ angular
                         return value + '%';
                     },
                     onChange: function (sliderId, modelValue, highValue, pointerType) {
-                        console.log(sliderId, modelValue, highValue, pointerType)
+                        $log.info(sliderId, modelValue, highValue, pointerType);
                     }
                 }
             },
@@ -34,6 +34,7 @@ angular
                     .getList()
                     .then( function ( result ) {
                         vm.availableList = result.data;
+                        $log.info(result);
                     })
                     .catch( function ( /*error*/ ) {
                         // NOTE: error doesn't handled because in case of error we predefined data as empty
@@ -48,7 +49,8 @@ angular
             ApiService
                 .setValue(vm.rangeSlider.currentValue)
                 .then( function ( result ) {
-                    console.log(result);
+                    toastr.success('Current value successfully updated');
+                    $log.info(result);
                 })
                 .catch( function ( /*error*/ ) {
                     // NOTE: error doesn't handled because in case of error we predefined data as empty
