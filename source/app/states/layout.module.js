@@ -8,6 +8,7 @@ angular
      */
     .module('cf-cp.layout', [
         'layout.home',
+        'layout.sap',
     ])
 
     .config( function ( $stateProvider ) {

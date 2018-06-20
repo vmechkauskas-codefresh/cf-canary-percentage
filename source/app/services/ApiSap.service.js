@@ -5,46 +5,13 @@ angular
     // as a deep for root module
     .module('cf-cp')
     // service injector name
-    .service('ApiService', function ( $q, $timeout, Restangular ) {
+    .service('ApiSapService', function ( $q, $timeout, Restangular ) {
         // private methods of service
         var Service = null;
         Service; // no-unused-vars =)
 
         return Service = {
             // public methods
-            /**
-             * @description to get actual list from server side
-             * @example ApiService.getList().then(...).catch(...);
-             * @returns { Promise }
-             * @function ApiService.getList
-             * @public
-             */
-            getList: function () {
-                var deferred = $q.defer();
-                /*
-               $timeout(function () {
-                   deferred.resolve( {data: [
-                           {
-                               date: '2013-05-26T05:00:00.000Z',
-                               target: 'some target',
-                               status: 'active',
-                               comments: 'some comments text'
-                           }
-                       ]} );
-               }, 0.5* 1000);
-               */
-                // GET /api/canary/routetable
-                Restangular
-                    .one('canary')
-                    .one('routetable')
-                    .get()
-                    .then(function (success) {
-                        deferred.resolve(success);
-                    })
-                    .catch(deferred.reject.bind(deferred));
-
-                return deferred.promise;
-            },
             /**
              * @description to set actual value
              * @example ApiService.setValue().then(...).catch(...);
@@ -55,16 +22,11 @@ angular
              */
             setValue: function (value) {
                 var deferred = $q.defer();
-                /*
-                $timeout(function () {
-                    deferred.resolve( {result: 'ok'} );
-                }, 0.5* 1000);
-                */
-                // POST /api/canary/percentage
+                // POST /api/builds/5b1f7a8129b6d0236a24e532
                 Restangular
-                    .one('canary')
-                    .all('percentage')
-                    .post( value )
+                    .one('builds')
+                    .all('5b1f7a8129b6d0236a24e532')
+                    .post( {'serviceId':'5b1f7a8129b6d0236a24e532','type':'build','repoOwner':'ShimiT','branch':'master','repoName':'bookshop'} )
                     .then(function ( result ) {
                         deferred.resolve( result );
                     })

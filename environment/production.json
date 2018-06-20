@@ -1,6 +1,6 @@
 {
     "baseUrl": "/",
     "production": true,
-    "serviceUrl": "/",
-    "apiPath": "api/2"
+    "serviceUrl": "https://g.codefresh.io/",
+    "apiPath": "api/"
 }

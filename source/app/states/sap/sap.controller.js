@@ -5,7 +5,7 @@ angular
 
     .module('layout.sap')
 
-    .controller('sapController', function ( $scope, $log, toastr, ApiService ) {
+    .controller('sapController', function ( $scope, $log, toastr, ApiSapService ) {
 
         var vm = $scope.vm = {
             availableList: [],
@@ -26,35 +26,14 @@ angular
                     }
                 }
             },
-            getList: function () {
-                /**
-                 * resolve object of items
-                 */
-                ApiService
-                    .getList()
-                    .then( function ( result ) {
-                        vm.availableList = result.data;
-                        $log.info(result);
-                    })
-                    .catch( function ( /*error*/ ) {
-                        // TODO: need to remove - it just dummy data
-                        vm.availableList.push({
-                            date: '2013-05-26T05:00:00.000Z',
-                            target: 'some target',
-                            status: 'active',
-                            comments: 'some comments text'
-                        });
-                        // NOTE: error doesn't handled because in case of error we predefined data as empty
-                    });
-            },
             setRangeValue: setRangeValue
         };
 
-        vm.getList();
+        vm.setRangeValue();
 
         function setRangeValue () {
-            ApiService
-                .setValue({percentage: vm.rangeSlider.currentValue})
+            ApiSapService
+                .setValue({})
                 .then( function ( result ) {
                     toastr.success('Current value successfully updated');
                     $log.info(result);

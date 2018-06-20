@@ -11,41 +11,11 @@
                     -->
                     <div class="panel-body">
                         <form ng-submit="$event.event.preventDefault(); vm.setRangeValue()" novalidate>
-                            <div class="form-group">
-                                <label for="rageSlider">Current</label>
-                                <rzslider
-                                    id="rageSlider"
-                                    class="cf-range-slider"
-                                    rz-slider-model="vm.rangeSlider.currentValue"
-                                    rz-slider-options="vm.rangeSlider.options"
-                                    on-change="vm.rangeSlider.sliderOnChange"></rzslider>
-                            </div>
                             <button type="submit" class="btn btn-cf-anim btn-cf-primary no-radius">Set</button>
                         </form>
                     </div>
                 </div>
 
-                <div class="panel panel-cf-box">
-                    <div class="panel-body">
-                        <form>
-                            <div class="form-group">
-                                <div class="btn-group" role="group" aria-label="Controls">
-                                    <button type="button" class="btn btn-cf-anim btn-cf-primary no-radius" ng-click="vm.getList()">Reload</button>
-                                </div>
-                            </div>
-                        </form>
-                        <table class="table table-bordered table-striped table-condensed table-hover">
-                            <tr ng-repeat="item in vm.availableList track by $index">
-                                <td ng-repeat="(k, v) in item">
-                                    <span ng-if="k == 'date'">{{v | date: "MM/dd/yyyy 'at' h:mma"}}</span>
-                                    <span ng-if="k == 'target'">{{v}}</span>
-                                    <span ng-if="k == 'status'">{{v}}</span>
-                                    <span ng-if="k == 'comments'">{{v}}</span>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
             </div>
 
         </div>

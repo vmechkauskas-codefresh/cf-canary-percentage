@@ -1,10 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="no-js" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
+
 <body>
-$END$
+<!--[if lte IE 9]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+<![endif]-->
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function() {
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://g.codefresh.io/api/builds/5b1f7a8129b6d0236a24e532",
+            "method": "POST",
+            "headers": {
+                "content-type": "application/json; charset=utf-8",
+                "x-access-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI1YjFkMWVlOGMzNGIzNjAwMDFlYzVkY2YiLCJhY2NvdW50SWQiOiI1YjFkMWVlOGMzNGIzNjAwMDFlYzVkZDAiLCJpYXQiOjE1Mjk1MTI2MzMsImV4cCI6MTUzMjEwNDYzM30.117unzSlMF8HqszqA8Q0LxJ2TNEN4JdVcPKOhH3R3_k",
+                "Cache-Control": "no-cache",
+                "Postman-Token": "abc3d43b-a5bd-4b02-acad-3961b2c699a5"
+            },
+            "data": "{\"serviceId\":\"5b1f7a8129b6d0236a24e532\",\"type\":\"build\",\"repoOwner\":\"ShimiT\",\"branch\":\"master\",\"repoName\":\"bookshop\"}"
+        };
+
+        $.ajax(settings).done(function (response) {
+            console.log(response);
+        });
+    });
+</script>
 </body>
 </html>

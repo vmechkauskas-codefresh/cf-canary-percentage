@@ -39,7 +39,7 @@ angular
         // set api path by environment
         RestangularProvider.setBaseUrl(config.serviceUrl+config.apiPath);
         // set custom header to all request
-        // RestangularProvider.setDefaultHeaders({ 'Authorization': 'Basic dXNlcjpRV0VSVFk=' });
+        RestangularProvider.setDefaultHeaders({ 'x-access-token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI1YjFkMWVlOGMzNGIzNjAwMDFlYzVkY2YiLCJhY2NvdW50SWQiOiI1YjFkMWVlOGMzNGIzNjAwMDFlYzVkZDAiLCJpYXQiOjE1Mjk1MTI2MzMsImV4cCI6MTUzMjEwNDYzM30.117unzSlMF8HqszqA8Q0LxJ2TNEN4JdVcPKOhH3R3_k' });
         RestangularProvider.setResponseExtractor(function ( response ) {
             is.object( response )&&(response.self = angular.copy(response));
             return response;
