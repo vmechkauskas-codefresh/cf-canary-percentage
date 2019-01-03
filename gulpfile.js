@@ -146,7 +146,7 @@ gulp.task('serve-dev', ['env-dev', 'inject'], function () {
 
 gulp.task('serve', ['env-node', 'inject'], function () {
     gulp.start('watch');
-    gulp.start('server-dev');
+    gulp.start('server-prod');
 });
  /*-------------------------------------------------
     package environment dependencies
